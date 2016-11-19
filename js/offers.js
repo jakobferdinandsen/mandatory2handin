@@ -125,18 +125,3 @@ function updateOffersView(offers) {
 function submitOffer(amount) {
     submitOfferAjax(amount);
 }
-
-//DEBUG
-function checkDupes(offers) {
-    offers.ids.forEach(function (id) {
-        count = 0;
-        offers.ids.forEach(function (id1) {
-            if (id === id1){
-                count++;
-            }
-        });
-        if (count > 1){
-            console.log("Dupe detected");
-        }
-    });
-}
