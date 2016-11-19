@@ -97,8 +97,6 @@ function addOffer(offersData, offers) {
         addOffer(offersData, offers); //Calls itself to continue to the next offer
     }
 }
-var lastDataError;
-var offersIdError;
 
 //Updates the offers table in the view with the offers data
 function updateOffersView(offers) {
