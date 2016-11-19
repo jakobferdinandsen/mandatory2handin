@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bank interaction App</title>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="css/styling.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h2 class="text-center">
+                <strong>Bank-API interaction app </strong>
+            </h2>
+            <div class="col-sm-12 col-md-9">
+                <div id="topRow" class="row">
+                    <div class="topRowPanel col-xs-12 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Account info</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Currency</td>
+                                            <td id="accountInfoCurrency"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Balance</td>
+                                            <td id="accountInfoBalance"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Amount on offer</td>
+                                            <td id="accountInfoOnOffer"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#myModal">Change API key</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topRowPanel col-xs-12 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Create a new offer</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div id="createNewOfferInputGroup" class="input-group">
+                                    <span class="input-group-addon" id="createOfferInputSpan">Amount</span>
+                                    <input id="createOfferInput" type="number" class="form-control"
+                                           aria-describedby="createOfferInputSpan">
+                                </div>
+                                <button id="createOfferButton" type="button" class="btn btn-primary btn-block">Submit
+                                    offer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left" style="padding: 1.5px 0px 1.5px 0px;">
+                                    Current offers
+                                </h3>
+                            </div>
+                            <div class="panel-body" id="currentOffersPanelBody">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <th>Id</th>
+                                        <th>Currency</th>
+                                        <th>Amount</th>
+                                        <th>Since</th>
+                                        <th>Exchange-rate</th>
+                                        <th>Options</th>
+                                    </thead>
+                                    <tbody id="currentOffersTable">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Exchange Rates</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <th>Currency</th>
+                                    <th>Value</th>
+                                </thead>
+                                <tbody id="exchangeRateTableBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Change api-key</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="changeApiKeyInputGroup" class="input-group">
+                            <span class="input-group-addon" id="changeApiKeyInputSpan">Api-key</span>
+                            <input id="changeApiKeyInput" type="text" class="form-control"
+                                   aria-describedby="changeApiKeyInputSpan">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="changeApiKeyButton" type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.js"></script>
+        <script src="lib/notify/notify.js"></script>
+        <script src="js/mainJS.js"></script>
+        <script src="js/ajaxCalls.js"></script>
+        <script src="js/offers.js"></script>
+        <script src="js/account.js"></script>
+        <script src="js/exchange.js"></script>
+    </body>
+
+</html>

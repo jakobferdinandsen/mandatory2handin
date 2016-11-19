@@ -1,0 +1,31 @@
+#topRow {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.topRowPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+.topRowPanel > .panel {
+    height: 100%;
+}
+
+#createNewOfferInputGroup {
+    margin-bottom: 3%;
+}
+
+#currentOffersPanelBody {
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+#currentOffersSearchBar {
+    width: 250px;
+    float: right;
+}
+
+.currentOfferBox {
+    border-bottom: solid;
+}
